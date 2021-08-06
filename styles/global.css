@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: PressStart;
+  src: url(../assets/fonts/PressStart2P.ttf);
+}
+
+@font-face {
+  font-family: RobotoLight;
+  src: url(../assets/fonts/RobotoMono-Light.ttf);
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(../assets/fonts/RobotoMono-Regular.ttf);
+}
+
+@font-face {
+  font-family: RobotoBold;
+  src: url(../assets/fonts/RobotoMono-Bold.ttf);
+}
+
+@font-face {
+  font-family: NunitoLight;
+  src: url(../assets/fonts/Nunito-Light.ttf);
+}
+@font-face {
+  font-family: Nunito;
+  src: url(../assets/fonts/Nunito-Regular.ttf);
+}
+@font-face {
+  font-family: NunitoBold;
+  src: url(../assets/fonts/Nunito-Bold.ttf);
+}
+
+@font-face {
+  font-family: PtSerif;
+  src: url(../assets/fonts/PTSerif-Regular.ttf);
+}
+
+@font-face {
+  font-family: PtSerifBold;
+  src: url(../assets/fonts/PTSerif-Bold.ttf);
+}
+
+@layer utilities {
+  @variants before,after {
+    .title-tag {
+      content: "#";
+      display: block;
+      @apply f-h2;
+    }
+  }
+}
+
+@layer base {
+  body {
+    font-family: Nunito;
+    @apply f-body px-10 md:px-0;
+  }
+
+  .ps2p {
+    font-family: PressStart;
+  }
+
+  .pts {
+    font-family: PtSerif;
+  }
+
+  .ptsbol {
+    font-family: PtSerifBold;
+  }
+
+  .roblig {
+    font-family: RobotoLight;
+  }
+
+  .robreg {
+    font-family: Roboto;
+  }
+  .robbol {
+    font-family: RobotoBold;
+  }
+  .nunlig {
+    font-family: NunitoLight;
+  }
+  .nunreg {
+    font-family: Nunito;
+  }
+
+  .nunbol {
+    font-family: NunitoBold;
+  }
+
+  .shadow-flat {
+    box-shadow: 2px 10px 10px rgba(0, 0, 0, 0.16);
+  }
+}
+
+@layer components {
+  .f-counter {
+    @apply ps2p;
+    @apply text-xl;
+  }
+  .f-course_content {
+    @apply pts;
+    @apply text-xl;
+  }
+  .f-additional {
+    @apply robreg;
+    @apply text-xl;
+  }
+  .f-body {
+    @apply nunreg;
+    @apply text-xl;
+  }
+  .f-subheader {
+    @apply robbol;
+    @apply text-xl;
+  }
+  .f-h3 {
+    @apply robbol;
+    @apply text-2xl;
+  }
+  .f-h2 {
+    @apply robbol;
+    @apply text-3xl;
+  }
+  .f-h1 {
+    @apply robbol;
+    @apply text-4xl;
+  }
+}
+
+@layer components {
+  .header-shadow {
+    box-shadow: 2px 10px 10px rgba(0, 0, 0, 0.16);
+  }
+
+  .about {
+    @apply my-20;
+  }
+
+  .about-content {
+    @apply flex flex-col p-5 mt-10;
+  }
+
+  .about-top {
+    @apply flex flex-col lg:flex-row justify-between items-center flex-1 space-x-6;
+  }
+
+  .person-card {
+    @apply inline-flex items-center justify-around px-5 py-10 shadow-flat rounded-md;
+  }
+
+  .person-image {
+    @apply w-36 h-36 rounded-md bg-black;
+  }
+
+  .person-title {
+    @apply flex flex-col items-start justify-around mx-16 self-stretch py-4;
+  }
+  .person-name {
+    @apply f-subheader;
+  }
+
+  .person-job {
+    @apply f-additional;
+  }
+
+  .process-summary {
+    @apply flex flex-col  flex-grow self-stretch   md:max-w-[800px];
+  }
+
+  .person-text {
+    @apply f-additional shadow-flat mt-20 px-2 py-5;
+  }
+
+  .person-app-info {
+  }
+}
+
+.process-summary .process-bar {
+  @apply flex justify-between py-4 flex-grow self-stretch flex-col;
+}
+
+.process-bar .title {
+  @apply f-additional;
+}
+
+.process-bar .bar {
+  @apply h-10 bg-black rounded-full overflow-hidden;
+}
+
+.general-title {
+  @apply before:title-tag text-gray-600 cursor-pointer;
+  @apply flex w-max f-h2;
+  @apply hover:underline;
+}
+
+.header-link-container p {
+  @apply p-2 px-5 cursor-pointer  bg-transparent rounded-xl;
+  @apply hover:bg-white hover:bg-opacity-40;
+}
+.header-link-container p.selected {
+  @apply bg-white bg-opacity-40;
+}
+
+.slide-down::hover div {
+  top: 36px;
+}
